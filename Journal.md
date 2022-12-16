@@ -30,5 +30,11 @@ Apparently, the way they put the code two years ago is different to current vers
 
 ### Accessibility
 
-The simple Flutter app works nicely with Apple's voice over out of box, which is very nice.
+The simple Flutter app works nicely with Apple's voice over out of box, which is very welcome.
 
+## 2022-12-16 
+
+It's all widgets again... I kind of like the way you built UI here. You don't directly position widgets on the screen by, say, providing coordinates, but you build the hierarchy and put widgets in organizing widgets that way controlling the layout on the screen. 
+That would be so hard without the hot-reload.
+
+I see this similiar to how you bild things with tools like EditorX. You do sections and then containers, grids, repeaters. Put widgets inside, define attachments, padding and behoviour. But EditorX is kind of wobbly. 
