@@ -38,3 +38,13 @@ It's all widgets again... I kind of like the way you built UI here. You don't di
 That would be so hard without the hot-reload.
 
 I see this similiar to how you bild things with tools like EditorX. You do sections and then containers, grids, repeaters. Put widgets inside, define attachments, padding and behoviour. But EditorX is kind of wobbly. 
+
+## 2022-12-17
+
+Still missing the `const` concept. Why is this not a const?
+```
+Container(
+    width: 100,
+    child: const Text('CHART'),
+)
+```
