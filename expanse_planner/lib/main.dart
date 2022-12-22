@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'transaction.dart';
 
 void main() {
@@ -34,7 +35,7 @@ class MyHomePage extends StatelessWidget {
           title: const Text('Flutter App'),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
@@ -60,7 +61,7 @@ class MyHomePage extends StatelessWidget {
                                     fontSize: 24,
                                     color: Colors.purple,
                                   ),
-                                  e.amount.toString(),
+                                  '\$${e.amount}',
                                 )),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +72,7 @@ class MyHomePage extends StatelessWidget {
                                 ),
                                 Text(
                                   style: const TextStyle(color: Colors.grey),
-                                  e.date.toString(),
+                                  DateFormat('yyyy-MM-dd').format(e.date),
                                 ),
                               ],
                             )
