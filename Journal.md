@@ -48,3 +48,13 @@ Container(
     child: const Text('CHART'),
 )
 ```
+## 2022-12-22
+
+Styling is still confusing. It's good that types of parameters are actually the names of the classes, for exmple:
+`crossAxisAlignment: CrossAxisAlignment.start`
+but then you get `decoration` parameter of type `Decoration` that can take values of `BoxDecoration` type.
+
+Some styling you do on a widget but others (depending on widget) you do on its parent. 
+
+I guess you need to used to it. The question how "sustainable" is that. I mean, once you have a break in flutter coding, will you need to lear it all anew when you get back to developing?
+
