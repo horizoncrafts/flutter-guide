@@ -28,6 +28,12 @@ class MyHomePage extends StatelessWidget {
 
   MyHomePage({super.key});
 
+  // String titleInput = '';
+  // String valueInput = '';
+
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +44,7 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            // Header
             Container(
                 width: double.infinity,
                 child: const Card(
@@ -45,11 +52,45 @@ class MyHomePage extends StatelessWidget {
                   color: Colors.blue,
                   child: Text('CHART'),
                 )),
+
+            // Input
+            Card(
+              elevation: 5,
+              child: Container(
+                padding: const EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    TextField(
+                      decoration: const InputDecoration(labelText: "Title"),
+                      controller: titleController,
+                      // onChanged: (String val) {
+                      //   titleInput = val;
+                      // },
+                    ),
+                    TextField(
+                      decoration: const InputDecoration(labelText: "Amount"),
+                      controller: amountController,
+                      // onChanged: (val) => valueInput = val,
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        print(titleController.text);
+                        print(amountController.text);
+                      },
+                      child: const Text("Add Transaction"),
+                    )
+                  ],
+                ),
+              ),
+            ),
+
+            // Transactions
             Column(
                 children: transactions
                     .map((e) => Card(
-                        color: Colors.orange,
-                        child: Row(
+                            // color: Colors.orange,
+                            child: Row(
                           children: <Widget>[
                             Container(
                                 margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
@@ -79,8 +120,8 @@ class MyHomePage extends StatelessWidget {
                           ],
                         )
 
-                        //Text(e.title),
-                        ))
+                            //Text(e.title),
+                            ))
                     .toList())
           ],
         ));

@@ -58,3 +58,9 @@ Some styling you do on a widget but others (depending on widget) you do on its p
 
 I guess you need to used to it. The question how "sustainable" is that. I mean, once you have a break in flutter coding, will you need to lear it all anew when you get back to developing?
 
+## 2022-12-25
+
+This is something really annoying. You go with a widget, and the linter complains to make it a `const`. Ok. But, some time later, you add something to the widget that makes it a constant no more. Now you have to remove `const` from the front of the widged, and add it to all apparently constant actuall arguments. 
+And then you decide, to actually go back to original version and the fun happens one more time.
+
+Sometimes I wish it was faster. Discussing over and over details of how widges are formatted makes me feel stuck. It would be better to get more concepts tought now.
