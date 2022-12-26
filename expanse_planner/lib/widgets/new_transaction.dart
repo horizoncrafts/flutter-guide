@@ -8,6 +8,14 @@ class NewTransaction extends StatelessWidget {
 
   NewTransaction({super.key, required this.addTransactionCallback});
 
+  void submitData() {
+    final amountValue = double.parse(amountController.text);
+
+    if (amountValue <= 0 || titleController.text.isEmpty) return;
+
+    addTransactionCallback(titleController.text, amountValue);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -20,15 +28,16 @@ class NewTransaction extends StatelessWidget {
             TextField(
               decoration: const InputDecoration(labelText: "Titley"),
               controller: titleController,
+              onSubmitted: (_) => submitData(),
             ),
             TextField(
               decoration: const InputDecoration(labelText: "Amount"),
               controller: amountController,
+              onSubmitted: (_) => submitData(),
+              keyboardType: const TextInputType.numberWithOptions(decimal: true),
             ),
             TextButton(
-              onPressed: () {
-                addTransactionCallback(titleController.text, double.parse(amountController.text));
-              },
+              onPressed: submitData,
               child: const Text("Add Transaction"),
             )
           ],

@@ -77,3 +77,9 @@ I guess that underscore conventions makes it easy for compiler to check whether 
 ### Scrollable column
 
 It's interesting, that actually a column doesn't do scrolling, but you rather wrap it in dedicated scrollable widget. Makes sense.
+
+## 2022-12-26
+
+This state management thing seems to be the pain in the back. At lecture 94 the code seems to be nicely organized, but now, because we need to add some widgets for data entry on the main screen, we need to "lift the state up?".
+
+I think I would organize it some other way. I'd try to build some factory to create the widgets with dependancies injected. Not to mess the logic into main.

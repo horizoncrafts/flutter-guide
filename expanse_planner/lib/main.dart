@@ -1,6 +1,6 @@
+import 'package:expanse_planner/widgets/new_transaction.dart';
 import 'package:flutter/material.dart';
 
-import 'models/transaction.dart';
 import 'widgets/user_transactions.dart';
 
 void main() {
@@ -16,32 +16,47 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  MyHomePage({super.key});
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
 
-  // String titleInput = '';
-  // String valueInput = '';
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  void startAddNewTransaction(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (builderContext) {
+          return NewTransaction(addTransactionCallback: () {});
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        floatingActionButton: FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
           title: const Text('Flutter App'),
+          actions: <Widget>[
+            IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+          ],
         ),
         body: SingleChildScrollView(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
+          children: const <Widget>[
             // Header
-            Container(
+            SizedBox(
                 width: double.infinity,
-                child: const Card(
+                child: Card(
                   elevation: 5,
                   color: Colors.blue,
                   child: Text('CHART'),
