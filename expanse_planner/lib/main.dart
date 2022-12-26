@@ -1,7 +1,8 @@
 import 'package:expanse_planner/widgets/new_transaction.dart';
 import 'package:flutter/material.dart';
 
-import 'widgets/user_transactions.dart';
+import 'models/transaction.dart';
+import 'widgets/transaction_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,39 +30,68 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  void startAddNewTransaction(BuildContext context) {
+  final List<Transaction> _userTransactions = [
+    Transaction(id: 't1', title: 'Newe stufff', amount: 99.99, date: DateTime.now()),
+    Transaction(id: 't2', title: "Weekly stufff", amount: 98.99, date: DateTime.now()),
+  ];
+
+  void _addNewTransaction(String title, double amount) {
+    final newTrans = Transaction(
+      id: DateTime.now().toString(),
+      title: title,
+      amount: amount,
+      date: DateTime.now(),
+    );
+
+    setState(() {
+      _userTransactions.add(newTrans);
+    });
+  }
+
+  void _startAddNewTransaction(BuildContext context) {
     showModalBottomSheet(
         context: context,
         builder: (builderContext) {
-          return NewTransaction(addTransactionCallback: () {});
+          return NewTransaction(addTransactionCallback: _addNewTransaction);
         });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              _startAddNewTransaction(context);
+            },
+            child: const Icon(Icons.add)),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
           title: const Text('Flutter App'),
           actions: <Widget>[
-            IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+            IconButton(
+                onPressed: () {
+                  _startAddNewTransaction(context);
+                },
+                icon: const Icon(Icons.add)),
           ],
         ),
         body: SingleChildScrollView(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const <Widget>[
+          children: <Widget>[
             // Header
-            SizedBox(
+            const SizedBox(
                 width: double.infinity,
                 child: Card(
                   elevation: 5,
                   color: Colors.blue,
                   child: Text('CHART'),
                 )),
-            UserTransactions(),
+            // Transactions
+            TransactionList(
+              userTransactions: _userTransactions,
+            ),
           ],
         )));
   }
