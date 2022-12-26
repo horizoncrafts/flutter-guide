@@ -64,3 +64,16 @@ This is something really annoying. You go with a widget, and the linter complain
 And then you decide, to actually go back to original version and the fun happens one more time.
 
 Sometimes I wish it was faster. Discussing over and over details of how widges are formatted makes me feel stuck. It would be better to get more concepts tought now.
+
+Seems like a many of the challenges (eg lifting the state) can be solved in different manners. Well, I assume we're learning the "flutteral" way in Shwartzmuller's course.
+
+I think I start to see how the state management is not at all replacement to MVC. It's just a framework thing, a convention on how to update GUI.
+
+### Private methods passed to other library
+
+This is kind of unclear. A `_privateMethod` is not available outside a library, right? But when passing it via "pointer" it can be used from within other library. 
+I guess that underscore conventions makes it easy for compiler to check whether there's a call to private function, but it doesn't care to do any checks when things are passed around "behind the scenes".
+
+### Scrollable column
+
+It's interesting, that actually a column doesn't do scrolling, but you rather wrap it in dedicated scrollable widget. Makes sense.
