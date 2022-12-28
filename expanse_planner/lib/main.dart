@@ -15,10 +15,32 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Personal Demo',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
-        accentColor: Colors.amber,
-        // colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.red),
-      ),
+          fontFamily: 'QuickSand',
+          textTheme: ThemeData.light()
+              .textTheme
+              .copyWith(headline6: const TextStyle(fontFamily: 'OpenSans', fontSize: 22, fontWeight: FontWeight.bold)),
+          appBarTheme: AppBarTheme(
+            toolbarTextStyle: ThemeData.light()
+                .textTheme
+                .copyWith(
+                    headline6: const TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 22,
+                ))
+                .bodyText2,
+            titleTextStyle: ThemeData.light()
+                .textTheme
+                .copyWith(
+                    headline6: const TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ))
+                .headline6,
+          ),
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple, accentColor: Colors.amber)
+          // ColorScheme.fromSwatch(primarySwatch: Colors.purple).copyWith(secondary: Colors.amber),
+          ),
       home: const MyHomePage(),
     );
   }
@@ -68,7 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Icon(Icons.add)),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: AppBar(
-          title: const Text('Personal Expanses'),
+          title: const Text(
+            'Personal Expanses',
+          ),
           actions: <Widget>[
             IconButton(
                 onPressed: () {

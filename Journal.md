@@ -83,3 +83,13 @@ It's interesting, that actually a column doesn't do scrolling, but you rather wr
 This state management thing seems to be the pain in the back. At lecture 94 the code seems to be nicely organized, but now, because we need to add some widgets for data entry on the main screen, we need to "lift the state up?".
 
 I think I would organize it some other way. I'd try to build some factory to create the widgets with dependancies injected. Not to mess the logic into main.
+
+## 2022-12-28
+
+This is actually annoying. The course covers old styling approach. For example using `accentColor` in `ThemeData` and `textTheme` in `AppBarTheme`. Transforming to new ways is not trivial at this point of time. This already confusing topic with multiple dot and nested invocations (`ThemeData.light().textTheme.copyWith(titleMedium: const TextStyle(...`) becomes even more so. This is not 2023-proof! Anyways, I skip caring for theming for now.
+
+Apparently I can see that the way this "Expanse Planner" is being built so far is not the best way of structuring the code. It's just hasted to show flutter features as soon as possible. Actually, I think I would prefer to have best practices tought since the very begining. I'm confused now, whather the way the code is written is a good practice (seems like in many cases it's not); and that adds more confusion.
+
+Ok, it's nice addition in Flutter VSC plugin, that, at least in some cases, for deprecated features it provides option to "Quick Fix..." and nicely refactors to current way. And btw, at the end of some lessons Swartzmuller added text file explaining showcasing how some of incopatibilites can be addressed (I think the refactoring fix did better). Lazy, but ok.
+
+Funny observation: when changing styling and working with iOS simulator I often need to "Restart" instead of "Hot Reload" to see consistent change results.

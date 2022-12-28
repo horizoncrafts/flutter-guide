@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NewTransaction extends StatefulWidget {
   final Function addTransactionCallback;
 
-  NewTransaction({super.key, required this.addTransactionCallback});
+  const NewTransaction({super.key, required this.addTransactionCallback});
 
   @override
   State<NewTransaction> createState() => _NewTransactionState();
