@@ -93,3 +93,7 @@ Apparently I can see that the way this "Expanse Planner" is being built so far i
 Ok, it's nice addition in Flutter VSC plugin, that, at least in some cases, for deprecated features it provides option to "Quick Fix..." and nicely refactors to current way. And btw, at the end of some lessons Swartzmuller added text file explaining showcasing how some of incopatibilites can be addressed (I think the refactoring fix did better). Lazy, but ok.
 
 Funny observation: when changing styling and working with iOS simulator I often need to "Restart" instead of "Hot Reload" to see consistent change results.
+
+## 2023-01-03
+
+The next tedious lesson about drawing widgets. Come on, let's do something more... challenging?
