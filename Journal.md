@@ -96,4 +96,11 @@ Funny observation: when changing styling and working with iOS simulator I often 
 
 ## 2023-01-03
 
-The next tedious lesson about drawing widgets. Come on, let's do something more... challenging?
+The next tedious lesson about drawing widgets. Come on, let's do something more... challenging? 
+I suppose, that when working on a project, I will have to google around a lot. I will not remember the particulars of each widget or theming structure. After only that I'll become skilled.
+
+## 2023-01-04 - 107. Flexible & Expanded: Deep Dive
+
+Started adding lesson name to headings. 
+
+I think I go through this section, "Widgets, Styling..." and next start building something on my own.
