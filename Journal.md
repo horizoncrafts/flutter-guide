@@ -108,3 +108,4 @@ I think I go through this section, "Widgets, Styling..." and next start building
 ## 2022-01-05 - 110. Widgets & Configuring Widgets - Summary / Overview
 
 The annoying thing is, building part of the app in a quick way, and then, some time later, fixing it because it wasn't following good practice. Ok, I get that, but my brain already saw the not-so-good stuff and when going back it sometimes get confusing.
+Really annoying. Some attributes or functions were made public, just to later on conclude that they should - of course - have underscore and actually be private from the begining. But I actually spent some time pondering on why they weren't make private...
