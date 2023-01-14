@@ -16,32 +16,36 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Personal Demo',
       theme: ThemeData(
-          fontFamily: 'QuickSand',
-          textTheme: ThemeData.light()
+        fontFamily: 'QuickSand',
+        textTheme: ThemeData.light()
+            .textTheme
+            .copyWith(headline6: const TextStyle(fontFamily: 'OpenSans', fontSize: 22, fontWeight: FontWeight.bold)),
+        appBarTheme: AppBarTheme(
+          toolbarTextStyle: ThemeData.light()
               .textTheme
-              .copyWith(headline6: const TextStyle(fontFamily: 'OpenSans', fontSize: 22, fontWeight: FontWeight.bold)),
-          appBarTheme: AppBarTheme(
-            toolbarTextStyle: ThemeData.light()
-                .textTheme
-                .copyWith(
-                    headline6: const TextStyle(
-                  fontFamily: 'OpenSans',
-                  fontSize: 22,
-                ))
-                .bodyText2,
-            titleTextStyle: ThemeData.light()
-                .textTheme
-                .copyWith(
-                    headline6: const TextStyle(
-                  fontFamily: 'OpenSans',
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                ))
-                .headline6,
-          ),
-          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple, accentColor: Colors.amber)
-          // ColorScheme.fromSwatch(primarySwatch: Colors.purple).copyWith(secondary: Colors.amber),
-          ),
+              .copyWith(
+                  headline6: const TextStyle(
+                fontFamily: 'OpenSans',
+                fontSize: 22,
+              ))
+              .bodyText2,
+          titleTextStyle: ThemeData.light()
+              .textTheme
+              .copyWith(
+                  headline6: const TextStyle(
+                fontFamily: 'OpenSans',
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ))
+              .headline6,
+        ),
+        colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.purple,
+          accentColor: Colors.amber,
+          errorColor: Colors.red,
+        ),
+        // ColorScheme.fromSwatch(primarySwatch: Colors.purple).copyWith(secondary: Colors.amber),
+      ),
       home: const MyHomePage(),
     );
   }
@@ -76,6 +80,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
     setState(() {
       _userTransactions.add(newTrans);
+    });
+  }
+
+  void _deleteTransaction(String id) {
+    setState(() {
+      _userTransactions.removeWhere((element) => element.id == id);
     });
   }
 
@@ -118,6 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // Transactions
             TransactionList(
               userTransactions: _userTransactions,
+              deleteTransaction: _deleteTransaction,
             ),
           ],
         )));
