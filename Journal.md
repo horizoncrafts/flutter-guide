@@ -107,5 +107,14 @@ I think I go through this section, "Widgets, Styling..." and next start building
 
 ## 2022-01-05 - 110. Widgets & Configuring Widgets - Summary / Overview
 
-The annoying thing is, building part of the app in a quick way, and then, some time later, fixing it because it wasn't following good practice. Ok, I get that, but my brain already saw the not-so-good stuff and when going back it sometimes get confusing.
+The annoying thing is, building part of the app in a quick way, and then, some time later, fixing it because it wasn't following good practice. Ok, I get that, but my brain already saw the not-so-good stuff and when going back it sometimes get confusing. On a lesson I'm not sure now whether watching the teacher I learn truely best bractices or something to just get going and maybe fix later.
+
 Really annoying. Some attributes or functions were made public, just to later on conclude that they should - of course - have underscore and actually be private from the begining. But I actually spent some time pondering on why they weren't make private...
+
+# 2022-01-19
+
+Very surprising - it seems you cannot specify w widget to occupy given part of the screen or, for example, the rest of the screen, say all below top bar to the bottom. I would exactly expect a platform like this to actually solve this type of challenges for you, but Shwartzmuller says otherwise. You have to get the size of the viewport yourselve and do the math. Ok, I presume it may be because of other targets like web, or pc. 
+
+This dart code seems to tend to be messy. Swift seems better thought of, from what could see given limited knowledge. But the multiplatform is what i'm attracted to. Quickly developing an idea and getting it validated from either androidininhos and iOsians is still compelling.
+
+But, maybe if could get some exposure to professional, well-arranged code I would feel more secure about chosen path. The code they do during tutorials, etc (also in like "17 days of flutter") seems like written just to get something done, showcased. I iterate: this is not a good way to teach pro coding, unless it's about producing some short-term bootcamp alumnia. Well, maybe it actually is.
